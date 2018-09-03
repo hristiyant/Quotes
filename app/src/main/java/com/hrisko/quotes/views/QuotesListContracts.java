@@ -2,6 +2,8 @@ package com.hrisko.quotes.views;
 
 import com.hrisko.quotes.models.Quote;
 
+import java.util.List;
+
 public interface QuotesListContracts {
     interface View {
         void setPresenter(Presenter presenter);
