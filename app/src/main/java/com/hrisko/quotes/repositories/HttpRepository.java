@@ -39,4 +39,11 @@ public class HttpRepository<T> implements Repository<T> {
         //todo later impl
         return null;
     }
+
+    @Override
+    public T getById(int id) throws IOException {
+        String url = mServerUrl + "/" + id;
+        String json = mHttpRequester.get(url);
+        return mJsonParser.fromJson(json);
+    }
 }
