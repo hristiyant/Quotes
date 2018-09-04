@@ -21,16 +21,22 @@ public class HttpRepository<T> implements Repository<T> {
 
     @Override
     public List<T> getAll() throws IOException {
-        return null;
+        String jsonArray = null;
+        jsonArray = mHttpRequester.get(mServerUrl);
+        return mJsonParser.fromJsonArray(jsonArray);
     }
 
     @Override
     public T add(T item) throws IOException {
-        return null;
+        String requestBody = mJsonParser.toJson(item);
+        String responseBody = mHttpRequester.post(mServerUrl, requestBody);
+
+        return mJsonParser.fromJson(responseBody) ;
     }
 
     @Override
     public T edit(T item, int id) throws IOException {
+        //todo later impl
         return null;
     }
 }
