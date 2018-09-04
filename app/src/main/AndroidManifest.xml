@@ -3,17 +3,18 @@
     package="com.hrisko.quotes">
 
     <application
+        android:name=".AndroidApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.Light.NoActionBar"
-        android:name=".AndroidApplication">
+        android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
-            android:name=".views.QuotesListActivity"
+            android:name=".views.QuotesList.QuotesListActivity"
             android:label="@string/title_activity_quotes_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".views.QuoteCreate.QuoteCreateActivity"></activity>
     </application>
 
 </manifest>

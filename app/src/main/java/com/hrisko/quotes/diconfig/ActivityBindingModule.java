@@ -1,6 +1,6 @@
 package com.hrisko.quotes.diconfig;
 
-import com.hrisko.quotes.views.QuotesListActivity;
+import com.hrisko.quotes.views.QuotesList.QuotesListActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

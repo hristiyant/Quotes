@@ -1,4 +1,4 @@
-package com.hrisko.quotes.views;
+package com.hrisko.quotes.views.QuotesList;
 
 import com.hrisko.quotes.models.Quote;
 

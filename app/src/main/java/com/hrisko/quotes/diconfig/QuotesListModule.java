@@ -1,6 +1,6 @@
 package com.hrisko.quotes.diconfig;
 
-import com.hrisko.quotes.views.QuotesListPresenter;
+import com.hrisko.quotes.views.QuotesList.QuotesListPresenter;
 
 import dagger.Binds;
 import dagger.Module;
