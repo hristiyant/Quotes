@@ -50,8 +50,11 @@ public class RepositoriesModule {
                         "https://firebasestorage.googleapis.com/v0/b/test-project-5944f.appspot.com/o/avengers_infinity_war.jpg?alt=media&token=a32d7f68-eeba-40d0-bcf3-8f0dbfe8d3b8")
         );
 
+        int[] index = new int[1];
         initQuotes.forEach(q -> {
             try {
+                q.setId(index[0]); //Only place where setId() should be used!
+                index[0]++;
                 repository.add(q);
             } catch (IOException e) {
                 e.printStackTrace();

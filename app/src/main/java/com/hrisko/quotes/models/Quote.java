@@ -25,6 +25,9 @@ public class Quote {
         return id;
     }
 
+    public void setId(int id) { //TO BE USED ONLY FOR InMemory repository! REST service handles id otherwise!!!
+        this.id = id;
+    }
 
     public String getAuthorName() {
         return authorName;

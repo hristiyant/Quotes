@@ -14,7 +14,8 @@
             android:name=".views.QuotesList.QuotesListActivity"
             android:label="@string/title_activity_quotes_list"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".views.QuoteCreate.QuoteCreateActivity"></activity>
+        <activity android:name=".views.QuoteCreate.QuoteCreateActivity" />
+        <activity android:name=".views.Details.QuoteDetailsActivity"></activity>
     </application>
 
 </manifest>
