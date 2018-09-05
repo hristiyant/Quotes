@@ -34,6 +34,7 @@ public class QuotesListActivity extends BaseDrawerActivity implements QuotesList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quotes_list);
+
         setSupportActionBar(getToolbar());
 
         ButterKnife.bind(this);

@@ -79,8 +79,8 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QuoteViewH
         @BindView(R.id.tv_topic)
         TextView mTopicTextView;
 
-        @BindView(R.id.tv_content)
-        TextView mContentTextView;
+//        @BindView(R.id.tv_content)
+//        TextView mContentTextView;
 
         @BindView(R.id.iv_author_image)
         ImageView mAuthorImageImageView;
@@ -97,7 +97,7 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QuoteViewH
         void bind(Quote quote) {
             mAuthorNameTextView.setText(quote.getAuthorName());
             mTopicTextView.setText(quote.getTopic());
-            mContentTextView.setText(quote.getQuote());
+//            mContentTextView.setText(quote.getQuote());
             Picasso.get().load(quote.getImageUrl()).into(mAuthorImageImageView);
             mQuote = quote;
         }

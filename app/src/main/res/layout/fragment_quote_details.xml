@@ -23,6 +23,7 @@
             android:layout_height="match_parent"
             android:text="@string/cool"
             android:textAlignment="center" />
+
         <TextView
             android:id="@+id/tv_quote_text"
             android:layout_width="match_parent"

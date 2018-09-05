@@ -14,6 +14,15 @@ public class Quote implements Serializable{
 
     }
 
+    public Quote(int id, String authorName, String topic, String quote, String imageUrl) {
+        this.id = id;
+        this.authorName = authorName;
+        this.topic = topic;
+        this.quote = quote;
+        this.imageUrl = imageUrl;
+        isDeleted = false;
+    }
+
     public Quote(String authorName, String topic, String quote, String imageUrl) {
         this.authorName = authorName;
         this.topic = topic;
