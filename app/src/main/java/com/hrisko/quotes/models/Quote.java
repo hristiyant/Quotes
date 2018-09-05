@@ -1,6 +1,8 @@
 package com.hrisko.quotes.models;
 
-public class Quote {
+import java.io.Serializable;
+
+public class Quote implements Serializable{
     public int id;
     public String authorName;
     public String topic;
