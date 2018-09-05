@@ -2,18 +2,21 @@ package com.hrisko.quotes.models;
 
 public class Quote {
     public int id;
-    public String author;
+    public String authorName;
     public String topic;
     public String quote;
+    public String imageUrl;
     public boolean isDeleted;
 
     public Quote() {
 
     }
-    public Quote( String author, String topic, String quote) {
-        this.author = author;
+
+    public Quote(String authorName, String topic, String quote, String imageUrl) {
+        this.authorName = authorName;
         this.topic = topic;
         this.quote = quote;
+        this.imageUrl = imageUrl;
         isDeleted = false;
     }
 
@@ -23,12 +26,12 @@ public class Quote {
     }
 
 
-    public String getAuthor() {
-        return author;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
     public String getTopic() {
@@ -45,6 +48,14 @@ public class Quote {
 
     public void setQuote(String quote) {
         this.quote = quote;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public boolean getIsDeleted() {
