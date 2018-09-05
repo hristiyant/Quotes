@@ -2,7 +2,7 @@ package com.hrisko.quotes;
 
 public class Constants {
     public static final String BASE_SERVER_URL
-            = "http://192.168.1.248:8080/api";
+            = "http://10.109.72.58:8080/api";
 //    public static final int SUPERHERO_NAME_MIN_LENGHT = 3;
 //    public static final int SUPERHERO_NAME_MAX_LENGHT = 50;
 //    public static final int SUPERHERO_SECRET_IDENTITY_MIN_LENGHT = 3;

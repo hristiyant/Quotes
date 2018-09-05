@@ -19,7 +19,7 @@ import dagger.Provides;
 
 @Module
 public class RepositoriesModule {
-    @Provides
+   /* @Provides
     @Singleton
     public Repository<Quote> quoteRepository() {
         Repository<Quote> repository = new InMemoryRepository<>();
@@ -66,15 +66,15 @@ public class RepositoriesModule {
 
         return repository;
     }
-
-//        @Provides
-//    @Singleton
-//    public Repository<Quote> quoteRepository(
-//            @Named("baseServerUrl") String baseServerUrl,
-//            HttpRequester httpRequester,
-//            JsonParser<Quote> jsonParser
-//    ) {
-//        String url = baseServerUrl + "/quotes";
-//        return new HttpRepository<>(httpRequester, url, jsonParser);
-//    }
+*/
+    @Provides
+    @Singleton
+    public Repository<Quote> quoteRepository(
+            @Named("baseServerUrl") String baseServerUrl,
+            HttpRequester httpRequester,
+            JsonParser<Quote> jsonParser
+    ) {
+        String url = baseServerUrl + "/quotes";
+        return new HttpRepository<>(httpRequester, url, jsonParser);
+    }
 }
