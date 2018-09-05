@@ -24,12 +24,30 @@ public class RepositoriesModule {
     public Repository<Quote> quoteRepository() {
         Repository<Quote> repository = new InMemoryRepository<>();
         List<Quote> initQuotes = Arrays.asList(
-                new Quote("Marcus Tullius Cicero", "Books", "A room without books is like a body without a soul."),
-                new Quote("Marilyn Monroe", "Life", "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best."),
-                new Quote("Oscar Wilde", "Life", "Be yourself; everyone else is already taken."),
-                new Quote("Albert Einstein", "Stupidity", "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe."),
-                new Quote("Frank Zappa", "Books", "So many books, so little time."),
-                new Quote("Bernard M. Baruch", "Life", "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.")
+                new Quote("Marcus Tullius Cicero",
+                        "Books",
+                        "A room without books is like a body without a soul.",
+                        "https://firebasestorage.googleapis.com/v0/b/test-project-5944f.appspot.com/o/avengers_infinity_war.jpg?alt=media&token=a32d7f68-eeba-40d0-bcf3-8f0dbfe8d3b8"),
+                new Quote("Marilyn Monroe",
+                        "Life",
+                        "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.",
+                        "https://firebasestorage.googleapis.com/v0/b/test-project-5944f.appspot.com/o/avengers_infinity_war.jpg?alt=media&token=a32d7f68-eeba-40d0-bcf3-8f0dbfe8d3b8"),
+                new Quote("Oscar Wilde",
+                        "Life",
+                        "Be yourself; everyone else is already taken.",
+                        "https://firebasestorage.googleapis.com/v0/b/test-project-5944f.appspot.com/o/avengers_infinity_war.jpg?alt=media&token=a32d7f68-eeba-40d0-bcf3-8f0dbfe8d3b8"),
+                new Quote("Albert Einstein",
+                        "Stupidity",
+                        "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+                        "https://firebasestorage.googleapis.com/v0/b/test-project-5944f.appspot.com/o/avengers_infinity_war.jpg?alt=media&token=a32d7f68-eeba-40d0-bcf3-8f0dbfe8d3b8"),
+                new Quote("Frank Zappa",
+                        "Books",
+                        "So many books, so little time.",
+                        "https://firebasestorage.googleapis.com/v0/b/test-project-5944f.appspot.com/o/avengers_infinity_war.jpg?alt=media&token=a32d7f68-eeba-40d0-bcf3-8f0dbfe8d3b8"),
+                new Quote("Bernard M. Baruch",
+                        "Life",
+                        "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.",
+                        "https://firebasestorage.googleapis.com/v0/b/test-project-5944f.appspot.com/o/avengers_infinity_war.jpg?alt=media&token=a32d7f68-eeba-40d0-bcf3-8f0dbfe8d3b8")
         );
 
         initQuotes.forEach(q -> {

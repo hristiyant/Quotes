@@ -56,7 +56,7 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QuoteViewH
     }
 
     public Quote getItem(int position) {
-        mQuotes.get(position);
+       return mQuotes.get(position);
     }
 
     public void clear() {
