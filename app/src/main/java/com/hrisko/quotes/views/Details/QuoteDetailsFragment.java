@@ -60,6 +60,8 @@ public class QuoteDetailsFragment extends Fragment implements QuoteDetailsContra
         mAuthorTextView.setText(quote.getAuthorName());
         mTopic.setText(quote.getTopic());
         mQuoteText.setText(quote.getQuote());
+        String s = quote.getQuote();
+        int b = 3;
     }
 
     @Override

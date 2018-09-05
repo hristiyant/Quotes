@@ -71,6 +71,9 @@ public abstract class BaseDrawerActivity extends DaggerAppCompatActivity {
         if (identifier == QuoteCreateActivity.IDENTIFIER) {
             return new Intent(this, QuoteCreateActivity.class);
         }
+        if (identifier == QuotesListActivity.IDENTIFIER) {
+            return new Intent(this, QuotesListActivity.class);
+        }
 
         return null;
     }
