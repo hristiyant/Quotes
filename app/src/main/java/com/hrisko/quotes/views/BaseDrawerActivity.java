@@ -18,7 +18,7 @@ import dagger.android.support.DaggerAppCompatActivity;
 
 public abstract class BaseDrawerActivity extends DaggerAppCompatActivity {
 
-    //@BindView(R.id.drawer_toolbar)
+    @BindView(R.id.drawer_toolbar)
     Toolbar mToolbar;
 
     public BaseDrawerActivity() {
@@ -26,22 +26,22 @@ public abstract class BaseDrawerActivity extends DaggerAppCompatActivity {
     }
 
     public void setupDrawer() {
-        PrimaryDrawerItem listSuperheroesItem = new PrimaryDrawerItem()
+        PrimaryDrawerItem listQuotesItem = new PrimaryDrawerItem()
                 .withIdentifier(QuotesListActivity.IDENTIFIER)
-                .withName("Superheroes");
+                .withName("Quotes");
 
-        PrimaryDrawerItem createSuperheroItem = new PrimaryDrawerItem()
+        PrimaryDrawerItem createQuoteItem = new PrimaryDrawerItem()
                 .withIdentifier(QuoteCreateActivity.IDENTIFIER)
                 .withIcon(android.R.drawable.btn_plus)
-                .withName("Create superhero");
+                .withName("Create quote");
 
         Drawer drawer = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(mToolbar)
                 .addDrawerItems(
-                        listSuperheroesItem,
+                        listQuotesItem,
                         new DividerDrawerItem(),
-                        createSuperheroItem
+                        createQuoteItem
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
