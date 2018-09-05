@@ -25,10 +25,10 @@ public class QuoteCreateFragment extends Fragment implements QuoteCreateContract
     private QuoteCreateContracts.Presenter mPresenter;
 
     @BindView(R.id.et_author)
-    EditText mNameEditText;
+    EditText mAuthorEditText;
 
     @BindView(R.id.et_topic)
-    EditText mSecretIdentity;
+    EditText mTopicEditText;
 
     @BindView(R.id.et_quote)
     EditText mQuoteText;
@@ -64,8 +64,8 @@ public class QuoteCreateFragment extends Fragment implements QuoteCreateContract
 
     @OnClick(R.id.btn_save)
     public void onQuoteSaveClicked() {
-        String authorsName = mNameEditText.getText().toString();
-        String topic = mSecretIdentity.getText().toString();
+        String authorsName = mAuthorEditText.getText().toString();
+        String topic = mTopicEditText.getText().toString();
         String quoteText = mQuoteText.getText().toString();
         String urlImsge = "img_url";
         Quote quote = new Quote(authorsName, topic, quoteText, urlImsge);
