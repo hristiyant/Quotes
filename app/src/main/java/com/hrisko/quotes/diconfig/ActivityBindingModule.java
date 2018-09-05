@@ -1,5 +1,7 @@
 package com.hrisko.quotes.diconfig;
 
+import com.hrisko.quotes.views.Details.QuoteDetailsActivity;
+import com.hrisko.quotes.views.QuoteCreate.QuoteCreateActivity;
 import com.hrisko.quotes.views.QuotesList.QuotesListActivity;
 
 import dagger.Module;
@@ -9,19 +11,19 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class ActivityBindingModule {
     @ActivityScoped
     @ContributesAndroidInjector(
-            //modules = QuotesListActivity.class
+            modules = QuotesListModule.class
     )
     abstract QuotesListActivity quotesListActivity();
 
-//    @ActivityScoped
-//    @ContributesAndroidInjector(
-//            modules = SuperheroDetailsModule.class
-//    )
-//    abstract SuperheroDetailsActivity superheroDetailsActivity();
-//
-//    @ActivityScoped
-//    @ContributesAndroidInjector(
-//            modules = SuperheroCreateModule.class
-//    )
-//    abstract SuperheroCreateActivity superheroCreateActivity();
+    @ActivityScoped
+    @ContributesAndroidInjector(
+            modules = QuoteDetailsModule.class
+    )
+    abstract QuoteDetailsActivity quoteDetailsActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector(
+            modules = QuoteCreateModule.class
+    )
+    abstract QuoteCreateActivity quoteCreateActivity();
 }

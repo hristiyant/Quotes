@@ -1,5 +1,6 @@
 package com.hrisko.quotes.diconfig;
 
+import com.hrisko.quotes.views.QuotesList.QuotesListContracts;
 import com.hrisko.quotes.views.QuotesList.QuotesListFragment;
 import com.hrisko.quotes.views.QuotesList.QuotesListPresenter;
 
@@ -13,7 +14,7 @@ public abstract class QuotesListModule {
     @ContributesAndroidInjector
     abstract QuotesListFragment quotesListFragment();
 
-    /*@ActivityScoped
+    @ActivityScoped
     @Binds
-    abstract QuotesListFragment.Presenter quotesListPresenter(QuotesListPresenter presenter);*/
+    abstract QuotesListContracts.Presenter quotesListPresenter(QuotesListPresenter presenter);
 }
