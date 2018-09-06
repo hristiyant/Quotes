@@ -9,6 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
 
 
         <TextView
@@ -16,21 +21,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/strange"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/tv_topic_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cool"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/tv_quote_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/fix"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

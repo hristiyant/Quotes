@@ -6,7 +6,9 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hrisko.quotes.R;
 import com.hrisko.quotes.models.Quote;
@@ -31,6 +33,9 @@ public class QuoteDetailsFragment extends Fragment implements QuoteDetailsContra
 
     @BindView(R.id.tv_quote_text)
     TextView mQuoteText;
+
+    @BindView(R.id.loading)
+    ProgressBar mProgressBar;
 
     @Inject
     public QuoteDetailsFragment() {
@@ -60,8 +65,6 @@ public class QuoteDetailsFragment extends Fragment implements QuoteDetailsContra
         mAuthorTextView.setText(quote.getAuthorName());
         mTopic.setText(quote.getTopic());
         mQuoteText.setText(quote.getQuote());
-        String s = quote.getQuote();
-        int b = 3;
     }
 
     @Override
@@ -71,16 +74,22 @@ public class QuoteDetailsFragment extends Fragment implements QuoteDetailsContra
 
     @Override
     public void showError(Throwable e) {
-
+        Toast.makeText(getContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void showLoading() {
-
+        mProgressBar.setVisibility(View.VISIBLE);
+        mAuthorTextView.setVisibility(View.GONE);
+        mTopic.setVisibility(View.GONE);
+        mQuoteText.setVisibility(View.GONE);
     }
 
     @Override
     public void hideLoading() {
-
+        mProgressBar.setVisibility(View.GONE);
+        mAuthorTextView.setVisibility(View.VISIBLE);
+        mTopic.setVisibility(View.VISIBLE);
+        mQuoteText.setVisibility(View.VISIBLE);
     }
 }

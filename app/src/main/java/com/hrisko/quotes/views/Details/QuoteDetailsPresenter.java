@@ -43,7 +43,8 @@ public class QuoteDetailsPresenter implements QuoteDetailsContracts.Presenter {
                 })
                 .subscribeOn(mSchedulerProvider.background())
                 .observeOn(mSchedulerProvider.ui())
-                .doOnError(mView::showError)
+                .doFinally(mView::hideLoading)
+                .doOnError(mView::showError) //different use? compared to list
                 .subscribe(mView::showQuote);
     }
 
