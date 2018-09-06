@@ -25,7 +25,7 @@ public interface QuoteCreateContracts {
         void save(Quote quote);
     }
 
-    public interface Navigator {
+     interface Navigator {
 
         void navigateToHome();
     }

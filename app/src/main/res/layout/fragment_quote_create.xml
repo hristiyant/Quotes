@@ -28,12 +28,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter the Quote" />
-
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
         <Button
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/save_this_quote"/>
+
     </LinearLayout>
 
 </FrameLayout>

@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.hrisko.quotes.R;
 import com.hrisko.quotes.models.Quote;
@@ -32,6 +34,9 @@ public class QuoteCreateFragment extends Fragment implements QuoteCreateContract
 
     @BindView(R.id.et_quote)
     EditText mQuoteText;
+
+    @BindView(R.id.loading)
+    ProgressBar mProgressBar;
 
 
     private QuoteCreateContracts.Navigator mNavigator;
@@ -67,8 +72,8 @@ public class QuoteCreateFragment extends Fragment implements QuoteCreateContract
         String authorsName = mAuthorEditText.getText().toString();
         String topic = mTopicEditText.getText().toString();
         String quoteText = mQuoteText.getText().toString();
-        String urlImsge = "img_url";
-        Quote quote = new Quote(authorsName, topic, quoteText, urlImsge);
+        String urlImage = "img_url";
+        Quote quote = new Quote(authorsName, topic, quoteText, urlImage);
         mPresenter.save(quote);
     }
 
@@ -84,17 +89,17 @@ public class QuoteCreateFragment extends Fragment implements QuoteCreateContract
 
     @Override
     public void showError(Throwable throwable) {
-
+        Toast.makeText(getContext(), "Error: " + throwable.getMessage(), Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void hideLoading() {
-
+    mProgressBar.setVisibility(View.GONE);
     }
 
     @Override
     public void showLoading() {
-
+    mProgressBar.setVisibility(View.VISIBLE);
     }
 
     public void setNavigator(QuoteCreateContracts.Navigator navigator) {
