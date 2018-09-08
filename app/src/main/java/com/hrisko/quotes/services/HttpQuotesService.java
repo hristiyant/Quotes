@@ -3,7 +3,9 @@ package com.hrisko.quotes.services;
 import com.hrisko.quotes.models.Quote;
 import com.hrisko.quotes.repositories.base.Repository;
 import com.hrisko.quotes.services.base.QuotesService;
+import com.hrisko.quotes.validators.base.Validator;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,13 +13,11 @@ import java.util.stream.Collectors;
 public class HttpQuotesService implements QuotesService {
 
     private final Repository<Quote> mQuotesRepository;
-    // private final Validator<Quote> mQuotesValidator;
+    private final Validator<Quote> mQuotesValidator;
 
-    public HttpQuotesService(Repository<Quote> repository
-                             //,Validator<Quote> validator
-    ) {
+    public HttpQuotesService(Repository<Quote> repository ,Validator<Quote> validator) {
         mQuotesRepository = repository;
-        // mQuotesValidator = validator;
+        mQuotesValidator = validator;
     }
 
     @Override
@@ -35,15 +35,18 @@ public class HttpQuotesService implements QuotesService {
         final String patternToLower = pattern.toLowerCase();
 
         return getAllQuotes().stream()
-                .filter(quote -> quote.getTopic().toLowerCase().contains(patternToLower))
+                .filter(quote -> quote.getTopic().toLowerCase().contains(patternToLower) ||
+                                quote.getAuthorName().toLowerCase().contains(patternToLower))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Quote createQuote(Quote quote) throws Exception {
-        /*if(!mQuotesValidator.isValid(quote)){
-            throw new IllegalArgumentException("Quote is not valid");
-        } */
-        return mQuotesRepository.add(quote);
+    public Quote createQuote(Quote quote) throws IllegalArgumentException, IOException {
+        if(!mQuotesValidator.isValid(quote)){
+            throw new IllegalArgumentException("Quote is not valid!");
+        }else {
+
+            return mQuotesRepository.add(quote);
+        }
     }
 }

@@ -20,7 +20,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
         HttpModule.class,
         RepositoriesModule.class,
         ServicesModule.class,
-       // ValidatorsModule.class,
+        ValidatorModule.class,
         AsyncModule.class,
         ViewsModule.class
 })
