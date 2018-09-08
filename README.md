@@ -12,4 +12,4 @@ Romantic, funny, political and many others - you chose the topic.*
 # Class Diagram
 
 - ## [Spring Part GitHub Page](https://github.com/vladimirVenkov/quotes)
-- ## [Android partGitHub Page](https://github.com/hrsssssssssssss/Quotes)
+- ## [Android Part GitHub Page](https://github.com/hrsssssssssssss/Quotes)
