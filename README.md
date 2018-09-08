@@ -11,5 +11,5 @@ Romantic, funny, political and many others - you chose the topic.*
 
 # Class Diagram
 
-- ## [GitHub Page](https://github.com/hrsssssssssssss/Quotes)
-- ## [GitHub Page](https://github.com/hrsssssssssssss/Quotes)
+- ## [Spring Part GitHub Page](https://github.com/vladimirVenkov/quotes)
+- ## [Android Part GitHub Page](https://github.com/hrsssssssssssss/Quotes)
