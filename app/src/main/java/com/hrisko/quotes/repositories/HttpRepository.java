@@ -28,8 +28,9 @@ public class HttpRepository<T> implements Repository<T> {
 
     @Override
     public T add(T item) throws IOException {
+        String url = mServerUrl + "/new";
         String requestBody = mJsonParser.toJson(item);
-        String responseBody = mHttpRequester.post(mServerUrl, requestBody);
+        String responseBody = mHttpRequester.post(url, requestBody);
 
         return mJsonParser.fromJson(responseBody) ;
     }

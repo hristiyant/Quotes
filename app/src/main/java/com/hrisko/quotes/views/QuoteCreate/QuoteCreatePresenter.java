@@ -3,6 +3,7 @@ package com.hrisko.quotes.views.QuoteCreate;
 import com.hrisko.quotes.async.base.SchedulerProvider;
 import com.hrisko.quotes.models.Quote;
 import com.hrisko.quotes.services.base.QuotesService;
+import com.hrisko.quotes.validators.QuoteValidator;
 
 import javax.inject.Inject;
 
@@ -14,6 +15,7 @@ public class QuoteCreatePresenter implements QuoteCreateContracts.Presenter{
     private final QuotesService mQuotesService;
     private final SchedulerProvider mSchedulerProvider;
     private QuoteCreateContracts.View mView;
+
 
     @Inject
     public QuoteCreatePresenter(
@@ -35,6 +37,12 @@ public class QuoteCreatePresenter implements QuoteCreateContracts.Presenter{
 
     @Override
     public void save(Quote quote) {
+//        if (!mValidator.isValid(quote)) {
+//            int c = 9;
+//            mView.showRequirementsMessage(mValidator.showMessage());
+//            return;
+//        }
+
         mView.showLoading();
         Disposable disposable = Observable
                 .create((ObservableOnSubscribe<Quote>) emitter -> {

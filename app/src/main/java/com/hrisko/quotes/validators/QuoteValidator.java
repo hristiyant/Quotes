@@ -13,19 +13,32 @@ public class QuoteValidator implements Validator<Quote>{
                 quote != null;
     }
 
+    public String showMessage() {
+        String message = String.format("Quote Author's name should be %s - %s long\n" +
+                "Topic %s - %s long and \n" +
+                "Quote length: %s - %s characters long!",
+                Constants.QUOTE_AUTHOR_NAME_MIN_LENGTH,
+                Constants.QUOTE_AUTHOR_NAME_MAX_LENGTH,
+                Constants.QUOTE_TOPIC_MIN_LENGTH,
+                Constants.QUOTE_TOPIC_MAX_LENGTH,
+                Constants.QUOTE_CONTENT_MIN_LENGTH,
+                Constants.QUOTE_CONTENT_MAX_LENGTH);
+        return  message;
+    }
+
     private boolean isTopicValid(Quote quote) {
-        return quote.getTopic().length() >= Constants.QUOTE_TOPIC_MIN_LENGHT &&
-                quote.getTopic().length() <= Constants.QUOTE_TOPIC_MAX_LENGHT;
+        return quote.getTopic().length() >= Constants.QUOTE_TOPIC_MIN_LENGTH &&
+                quote.getTopic().length() <= Constants.QUOTE_TOPIC_MAX_LENGTH;
     }
 
     private boolean isAuthorNameValid(Quote quote) {
-        return quote.getAuthorName().length() >= Constants.QUOTE_AUTHOR_NAME_MIN_LENGHT &&
-                quote.getAuthorName().length() <= Constants.QUOTE_AUTHOR_NAME_MAX_LENGHT;
+        return quote.getAuthorName().length() >= Constants.QUOTE_AUTHOR_NAME_MIN_LENGTH &&
+                quote.getAuthorName().length() <= Constants.QUOTE_AUTHOR_NAME_MAX_LENGTH;
     }
 
     private boolean isQuoteContentValid(Quote object) {
-        return object.getQuote().length() >= Constants.QUOTE_CONTENT_MIN_LENGHT &&
-                object.getQuote().length() <= Constants.QUOTE_CONTENT_MAX_LENGHT;
+        return object.getQuote().length() >= Constants.QUOTE_CONTENT_MIN_LENGTH &&
+                object.getQuote().length() <= Constants.QUOTE_CONTENT_MAX_LENGTH;
     }
 
 }

@@ -14,6 +14,8 @@ public interface QuoteCreateContracts {
         void hideLoading();
 
         void showLoading();
+
+//        void showRequirementsMessage(String message);
     }
 
     interface Presenter {

@@ -72,8 +72,9 @@ public class QuoteCreateFragment extends Fragment implements QuoteCreateContract
         String authorsName = mAuthorEditText.getText().toString();
         String topic = mTopicEditText.getText().toString();
         String quoteText = mQuoteText.getText().toString();
-        String urlImage = "img_url";
+        String urlImage = "https://cdn.pixabay.com/photo/2013/07/12/12/37/letter-146011_960_720.png";
         Quote quote = new Quote(authorsName, topic, quoteText, urlImage);
+
         mPresenter.save(quote);
     }
 
@@ -101,6 +102,12 @@ public class QuoteCreateFragment extends Fragment implements QuoteCreateContract
     public void showLoading() {
     mProgressBar.setVisibility(View.VISIBLE);
     }
+
+//    @Override
+//    public void showRequirementsMessage(String message) {
+//        Toast.makeText(getContext(), message, Toast.LENGTH_LONG)
+//        .show();
+//    }
 
     public void setNavigator(QuoteCreateContracts.Navigator navigator) {
         mNavigator = navigator;
