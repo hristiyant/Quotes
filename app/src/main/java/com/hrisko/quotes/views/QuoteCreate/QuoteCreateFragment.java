@@ -74,7 +74,7 @@ public class QuoteCreateFragment extends Fragment implements QuoteCreateContract
         String quoteText = mQuoteText.getText().toString();
         String urlImage = "https://cdn.pixabay.com/photo/2013/07/12/12/37/letter-146011_960_720.png";
         Quote quote = new Quote(authorsName, topic, quoteText, urlImage);
-
+        //int b = 5;
         mPresenter.save(quote);
     }
 

@@ -32,7 +32,8 @@ public class HttpRepository<T> implements Repository<T> {
         String requestBody = mJsonParser.toJson(item);
         String responseBody = mHttpRequester.post(url, requestBody);
 
-        return mJsonParser.fromJson(responseBody) ;
+         mJsonParser.fromJson(responseBody) ;
+        return item;
     }
 
     @Override

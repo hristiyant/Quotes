@@ -15,6 +15,7 @@ public class QuoteCreatePresenter implements QuoteCreateContracts.Presenter{
     private final QuotesService mQuotesService;
     private final SchedulerProvider mSchedulerProvider;
     private QuoteCreateContracts.View mView;
+    private Quote mQuote;
 
 
     @Inject
@@ -42,11 +43,13 @@ public class QuoteCreatePresenter implements QuoteCreateContracts.Presenter{
 //            mView.showRequirementsMessage(mValidator.showMessage());
 //            return;
 //        }
+        mQuote = quote;
 
         mView.showLoading();
         Disposable disposable = Observable
                 .create((ObservableOnSubscribe<Quote>) emitter -> {
-                    Quote createdQuote = mQuotesService.createQuote(quote);
+                    Quote createdQuote = mQuotesService.createQuote(mQuote);
+                    int b = 4;
                     emitter.onNext(createdQuote);
                     emitter.onComplete();
                 })
