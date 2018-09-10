@@ -28,7 +28,7 @@ public class HttpRepository<T> implements Repository<T> {
 
     @Override
     public T add(T item) throws IOException {
-        String url = mServerUrl + "/quotes/new";
+        String url = mServerUrl + "/new";
         String requestBody = mJsonParser.toJson(item);
         String responseBody = mHttpRequester.post(url, requestBody);
 
@@ -43,7 +43,7 @@ public class HttpRepository<T> implements Repository<T> {
 
     @Override
     public T getById(int id) throws IOException {
-        String url = mServerUrl + "/quotes/" + id;
+        String url = mServerUrl + "/" + id;
         String json = mHttpRequester.get(url);
         return mJsonParser.fromJson(json);
     }
